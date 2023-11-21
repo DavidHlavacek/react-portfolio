@@ -1,0 +1,152 @@
+.projectBar-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    height: 7.5%;
+    top: 3px;
+    bottom: 0;
+    left: 5%;
+    background: #011a27;
+    
+
+    .projectContainer,
+    .activeProjectContainer {
+
+                width: 100%;
+                .x-button {
+                    // position: absolute;
+                    // margin-left: 160px; // Adjust this value as needed
+                    opacity: 0; // Initially hide the close button
+                    transition: opacity 0.3s ease; // Add a smooth transition effect
+                }
+                
+                &:hover .x-button {
+                    opacity: 1; // Make the close button visible when hovering over the tab
+                }
+        
+                &.activeProjectContainer .x-button {
+                    opacity: 1; // Make the close button always visible on the active tab
+                }
+                
+                // ... (rest of the styles)
+                
+        img {
+            height: 30px;
+            margin-left: 40px;
+        }
+        svg {
+            // w-6 ml-4 hover:bg-gray-600 hover:rounded
+            width: 20px;
+            margin-left: 15px;
+            &:hover {
+                background-color: #808080;
+                border-radius: 5px;
+            }            
+        }
+        p {
+            font-family: "Cascadia";
+            font-size: 60%;
+            margin-left: 6px;
+        }
+        &:first-of-type::before {
+            content: '';
+            height: 5000px; // Adjust the height as needed
+            width: 10px;
+            // background-color: #000;
+            background: linear-gradient(to right, #080808, #000000); // Progressive gradient from left to right
+        }
+        
+        
+        
+        &::after {
+            margin-left: 20px;
+            content: '';
+            height: 100%; // Adjust the height as needed
+            width: 5px;
+            background-color: #000; // Color of the vertical line
+        }
+        // &:last-of-type:after {
+        //     margin-left: 20px;
+        //     content: '';
+        //     height: 100%; // Adjust the height as needed
+        //     width: 5px;
+        //     background-color: #000; // Color of the vertical line
+        //     border-bottom: none; // Add this line for the bottom border
+        // }
+        &:last-child:after {
+            border-left: 5px solid #000; // Add this line for the bottom border
+            background-color: #011a27;
+            width: 5000px; // Color of the vertical line
+            border-top: 6px solid #011a27;
+            border-bottom: 5px solid #000; 
+        }
+
+    }
+
+    
+
+    .projectContainer {
+        border-top: 5px solid #000; // Add this line for the bottom border
+
+        //     h-full
+        //   flex
+        //   items-center
+        //   justify-center
+        //   px-4
+        //   text-white
+        //   hover:bg-[#1e1e1e]
+        //   hover:text-yellow_vs
+        //   cursor-pointer
+        //   text-lg
+        //   font-medium
+        //   text-gray-300
+        border-bottom: 5px solid #000; // Add this line for the bottom border
+
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        cursor: pointer;
+        font-size: 30px;
+        
+
+        &:hover {
+            background-color: #022c43;
+            color: #ffd700;
+        }
+    }
+
+    .activeProjectContainer {
+        border-top: 6.5px solid #000; // Add this line for the bottom border
+
+        border-bottom: none; // Add this line for the bottom border
+
+        //     h-full
+        //   flex
+        //   items-center
+        //   justify-center
+        //   px-4
+        //   text-white
+        //   bg-[#1e1e1e]
+        //   hover:text-yellow_vs
+        //   cursor-pointer
+        //   text-lg
+        //   font-medium
+        //   text-gray-300
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        background: #022c43;
+        cursor: pointer;
+        font-size: 30px;
+
+        &:hover {
+            color: #ffd700;
+        }
+    }
+}
