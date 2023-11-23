@@ -12,6 +12,8 @@ import {
 import SchoolIcon from '@mui/icons-material/School';
 import WorkIcon from '@mui/icons-material/Work';
 import { PiSquaresFourBold } from "react-icons/pi";
+import { FcServices } from "react-icons/fc";
+
 
 
 const Sidebar = () => (
@@ -38,10 +40,10 @@ const Sidebar = () => (
             <NavLink
                 exact="true"
                 activeclassname="active"
-                className="projects-link"
-                to="/projects"
+                className="services-link"
+                to="/services"
             >
-                <PiSquaresFourBold />
+                <FcServices />
             </NavLink>
             </div>
             <div className='bot-nav'>

@@ -1,5 +1,3 @@
-// projects-bar.js
-
 import React, { useState, useEffect } from 'react'
 import { XIcon } from '@heroicons/react/solid'
 import './index.scss'
@@ -7,12 +5,12 @@ import Loader from 'react-loaders'
 
 const JSIcon = require('../../assets/icons/JSIcon.png')
 
-const ProjectsBar = ({ showPage, setShowPage }) => {
+const ServicesBar = ({ showPage, setShowPage }) => {
     const [hidePage, setHidePage] = useState([])
 
     useEffect(() => {
         // Set the first tab as the initially selected tab
-        setShowPage('Projects')
+        setShowPage('Main')
     }, []) // Empty dependency array ensures this effect runs only once on mount
 
     const handleTabClick = (page) => {
@@ -24,10 +22,10 @@ const ProjectsBar = ({ showPage, setShowPage }) => {
         e.stopPropagation()
         const newHiddenPage = [...hidePage, page]
         const remainingTabs = [
+            'Main',
+            'Web Development',
+            'Software Development',
             'Projects',
-            'Project1',
-            'Project2',
-            'Project3',
         ].filter((tab) => !newHiddenPage.includes(tab))
 
         // Set the first remaining tab as the new selected tab
@@ -37,11 +35,18 @@ const ProjectsBar = ({ showPage, setShowPage }) => {
         setHidePage(newHiddenPage)
     }
 
+    const tabIcons = {
+        Main: require('../../assets/icons/JSIcon.png'), // Default icon
+        'Web Development': require('../../assets/icons/webdev2.png'),
+        'Software Development': require('../../assets/icons/softwaredev.png'),
+        Projects: require('../../assets/icons/projects.png'),
+    };
+
     return (
         <>
         <div className="page-container">
             <div className="projectBar-container">
-                {['Projects', 'Project1', 'Project2', 'Project3'].map((page, index, array) =>
+                {['Main', 'Web Development', 'Software Development', 'Projects'].map((page, index, array) =>
                     hidePage.includes(page) ? null : (
                         <>
                             <div
@@ -54,13 +59,13 @@ const ProjectsBar = ({ showPage, setShowPage }) => {
                                 onClick={() => handleTabClick(page)}
                             >
                                 <img
-                                    src={JSIcon}
-                                    alt="JS Icon"
+                                    src={tabIcons[page]}
+                                    alt={`${page} Icon`}
                                     className="w-7 mr-1 text-yellow_vs"
                                 />
                                 <p>{`${
-                                    page.charAt(0).toUpperCase() + page.slice(1)
-                                }.js`}</p>
+                                    index === 0 ? page : page.charAt(0).toUpperCase() + page.slice(1)
+                                }${index === 0 ? '.js' : ''}`}</p>
                                 <div
                                     className="x-button"
                                     onClick={(e) =>
@@ -85,4 +90,4 @@ const ProjectsBar = ({ showPage, setShowPage }) => {
     )
 }
 
-export default ProjectsBar
+export default ServicesBar;

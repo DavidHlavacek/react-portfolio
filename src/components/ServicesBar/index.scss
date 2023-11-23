@@ -4,16 +4,18 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    height: 7.5%;
+    height: 15%;
     top: 3px;
     bottom: 0;
-    left: 5%;
+    left: 0%;
     background: #011a27;
     
 
     .projectContainer,
     .activeProjectContainer {
 
+    
+                height: 100px;
                 width: 100%;
                 .x-button {
                     // position: absolute;
@@ -33,9 +35,17 @@
                 // ... (rest of the styles)
                 
         img {
-            height: 30px;
-            margin-left: 40px;
+            height: 40px;
+            margin-left: 50px;
+           
         }
+        &:nth-child(1) {
+            img {
+            height: 50px;
+            margin-left: 30px;
+            }
+        }
+       
         svg {
             // w-6 ml-4 hover:bg-gray-600 hover:rounded
             width: 20px;
@@ -48,7 +58,12 @@
         p {
             font-family: "Cascadia";
             font-size: 60%;
-            margin-left: 6px;
+            margin-left: 20px;
+        }
+        &:nth-child(1) {
+            p {
+                margin-left: 6px;
+            }
         }
         &:first-of-type::before {
             content: '';
@@ -57,6 +72,9 @@
             // background-color: #000;
             background: linear-gradient(to right, #080808, #000000); // Progressive gradient from left to right
         }
+
+
+
         
         
         
@@ -120,7 +138,15 @@
     }
 
     .activeProjectContainer {
-        border-top: 6.5px solid #000; // Add this line for the bottom border
+        border-top: 6.5px solid #000; // Add this line for the bottom border 
+        &:nth-child(3) {
+            border-right: 1px solid #000;   
+            border-left: 1px solid #000;   
+        } 
+        &:nth-child(4) {
+            border-right: 1px solid #000;   
+            border-left: 1px solid #000;   
+        } 
 
         border-bottom: none; // Add this line for the bottom border
 

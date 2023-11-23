@@ -1,8 +1,9 @@
 import React from 'react'
 import AnimatedLetters from '../../AnimatedLetters'
 import { useEffect, useState } from 'react'
+import UnderConstructionPage from '../../UnderConstruction'
 
-const Project = () => {
+const Projects = () => {
     const [letterClass, setLetterClass] = useState('text-animate')
     const pageTitle = [
         'W',
@@ -32,22 +33,15 @@ const Project = () => {
     useEffect(() => {
         setTimeout(() => {
             setLetterClass('text-animate-hover')
-        }, 3500)
+        }, 3000)
     }, [])
     return (
         <div className="project-container project-home">
             <div className="text-zone">
-                <h1>
-                    <AnimatedLetters
-                        letterClass={letterClass}
-                        strArray={pageTitle}
-                        idx={8}
-                    />
-                </h1>
-                <p>Hi, there!</p>
+               <UnderConstructionPage />
             </div>
         </div>
     )
 }
 
-export default Project
+export default Projects;

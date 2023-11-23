@@ -1,8 +1,9 @@
 import React from 'react'
 import AnimatedLetters from '../../AnimatedLetters'
 import { useEffect, useState } from 'react'
+import './index.scss'
 
-const Project1 = () => {
+const Main = () => {
     const [letterClass, setLetterClass] = useState('text-animate')
     const pageTitle = [
         'W',
@@ -16,24 +17,26 @@ const Project1 = () => {
         't',
         'o',
         ' ',
-
-        'P',
-        'r',
-        'o',
-        'j',
+        'm',
+        'y',
+        ' ',
+        'S',
         'e',
+        'r',
+        'v',
+        'i',
         'c',
-        't',
-        '1',
+        'e',
+        's',
     ]
 
     useEffect(() => {
         setTimeout(() => {
             setLetterClass('text-animate-hover')
-        }, 3000)
+        }, 3500)
     }, [])
     return (
-        <div className="project-container project-home">
+        <div className="services-container services-main">
             <div className="text-zone">
                 <h1>
                     <AnimatedLetters
@@ -42,9 +45,12 @@ const Project1 = () => {
                         idx={5}
                     />
                 </h1>
+                <p>Hi, there!</p>
+                <p>Here I showcase all the services I offer.</p>
+                <p>Please click on the tabs you are interested in!</p>
             </div>
         </div>
     )
 }
 
-export default Project1
+export default Main
