@@ -20,6 +20,16 @@
         
     }
 
+    @media screen and (max-width: 500px) {
+        top: 70%;
+        right: 30%;
+        left: 0;
+        width: 50%;
+        height: auto;
+        margin: auto;
+        
+    }
+
     .svg-container {
         position: absolute;
         top: -6.8%;
