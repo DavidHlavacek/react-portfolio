@@ -16,14 +16,7 @@ const Logo = () => {
             duration: 1,
             opacity: 1,
         })
-        .fromTo(outlineLogoRef.current, {
-            duration: 2,
-            opacity: 1,
-        }, {
-            opacity: 0,
-            delay: 2,
-            duration: 2
-        })
+       
         
         gsap.fromTo(solidLogoRef.current, {
             opacity: 0,
